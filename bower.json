@@ -7,6 +7,7 @@
   "dependencies": {
     "bootstrap": "~3.3.5",
     "bootstrap-fileinput": "~4.2.6",
+    "bootstrap-sweetalert": "~0.4.5",
     "vis": "~4.8.1"
   }
 }

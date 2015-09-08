@@ -1,7 +1,7 @@
 $("#dotInput").fileinput(
     {
         'showPreview':false,
-        'allowedFileExtensions':['dot'],
+        'allowedFileExtensions':['rdf','owl','ttl'],
         'msgValidationError': "File type not valid.",
         'uploadLabel':'Visualize'
     }
@@ -16,10 +16,16 @@ $('button.fileinput-upload-button').on('click',function(){
             data: formData,
             async: true,
             success: function (data) {
-                $("#dotInput").fileinput('reset');
-                $("div.graph-browse").hide();
-                $('#graphContainer').addClass("graph-container");
-                initializeGraph(data,'graphContainer');
+                data = JSON.parse(data);
+                if(data.status=="failure"){
+                    $("#dotInput").fileinput('reset');
+                    swal("Error", data.message, "error");
+                }else{
+                    $("#dotInput").fileinput('reset');
+                    $("div.graph-browse").hide();
+                    $('#graphContainer').addClass("graph-container");
+                    initializeGraph(data.content,'graphContainer');
+                }
             },
             cache: false,
             contentType: false,
