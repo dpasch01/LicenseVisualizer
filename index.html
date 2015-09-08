@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>OSS License Visualizer</title>
+        <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="lib/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet">
+        <link href="lib/vis/dist/vis.min.css" rel="stylesheet">
+        <link href="css/index.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="graphContainer"></div>
+        <div class="container">
+            <div class="graph-browse jumbotron">
+                <h1>Visualize your graph</h1>
+                <p><i>Browse your .dot file and press &quot;Visualize&quot; to visualy represent your graph.</i></p>
+                <form type="post" id="uploadForm" action="" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input id="dotInput" name="dotInput" type="file" class="file" data-preview-file-type="text">
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <script src="lib/jquery/dist/jquery.min.js"></script>
+        <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="lib/bootstrap-fileinput/js/fileinput.min.js"></script>
+        <script src="lib/vis/dist/vis.min.js"></script>
+        <script src="js/graph.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "licenseVisualizer",
+  "private": "true",
+  "version": "0.0.1",
+  "main": "index.html",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "bootstrap-fileinput": "~4.2.6",
+    "vis": "~4.8.1"
+  }
+}
