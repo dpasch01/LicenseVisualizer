@@ -2,7 +2,15 @@
     require_once "vendor/easyrdf/easyrdf/lib/EasyRdf.php";
 
     $fileContent=file_get_contents($_FILES["dotInput"]["tmp_name"]);
-    
+    $info = new SplFileInfo($_FILES["dotInput"]["name"]);
+
+    if(strcmp(strval($info->getExtension()),"dot")==0){
+        $returnValue['status']="success";
+        $returnValue['content']=$fileContent;  
+        echo json_encode($returnValue);
+        return;
+    }
+
     $output_format_options = array();
     foreach (EasyRdf_Format::getFormats() as $format) {
         if ($format->getSerialiserClass()) {
@@ -33,7 +41,7 @@
     }
 
     $format = EasyRdf_Format::getFormat($_REQUEST['output_format']);
-
+    
     $output = $graph->serialise($format);
     if (!is_scalar($output)) {
         $output = var_export($output, true);

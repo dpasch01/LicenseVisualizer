@@ -1,7 +1,7 @@
 $("#dotInput").fileinput(
     {
         'showPreview':false,
-        'allowedFileExtensions':['rdf','owl','ttl'],
+        'allowedFileExtensions':['rdf','owl','ttl','dot'],
         'msgValidationError': "File type not valid.",
         'uploadLabel':'Visualize'
     }
